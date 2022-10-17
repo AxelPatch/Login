@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--starts the HTML document-->
+<html>
+<!--this is also a great place for the page lvl java script-->
+<!--this starts the head sections-->
+<head>
+   <Title> The Fourth wall</Title>
+  <!--Starts css-->
+   <style>
+   /*sets the body styling such as backround image and font color*/  
+   body {
+    background-image: url(Door.jfif);
+    /*Prevents the backround image from repeating*/
+    background-repeat: no-repeat;
+    /*makes the imagae cover the entire screen*/
+    background-size: cover;
+    color: white;
+    /*ceters everything on the page*/
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   }
+   /*sets characteristics for the h1 tag*/
+   h1{
+    font-size: 70px;
+   }
+    /*sets chracteristics for the paragraph*/
+   p{
+    font-size: 20px;
+   }
+   </style>
+    <!--start java script section-->
+   <script>
+    //create a function to validate the user
+    function validateuser(){
+       //get the first users first and last name
+       var firstname = document.getElementById("firstname").value;
+       var lastname = document.getElementById("lastname").value;
+       //consilidaets the variables into one name
+       var fullname = firstname + " " + lastname;
+       //now lets get the users badge number
+       var badgenumber = document.getElementById("IDnumber").value;
+       //welcomes the user to the site
+       alert("welcome" + " " + fullname);
+       if (fullname.length > 20){
+        //sends the alert that the name is to large
+        alert("your full name may not exced 20 characters");
+       }
+       if(badgenumber.length == 3){
+        //sends the alert that tells the user they have acces
+        alert("You Have Passed Confirmation and you may Procced to break the fourth wall. Thank You for your time");
+       }
+       else{
+        // sends the alert that the badge number is too large
+        alert("Your Badge number must be 3 number long");
+
+       }
+       //
+    }
+   </script>
+</head>
+<!--starts the body in the html document-->
+<body>
+    <!--the first largest header-->
+    <h1>The Fourth Wall</h1>
+    
+    <p>This will let you break the fourth wall. In order to pass you first must prove that your are the charater allowed to do so. Please Enter your
+        credentials and proper ID number in oder to continue.
+    </p>
+    <!--Creats the text box for user first name-->
+    <input type="text" id="firstname" placeholder="First Name">
+    <!--create a text box for the user last name-->
+    <input type="text" id="lastname" placeholder="Last Name">
+    <!--creats a text box to take the users badge number-->
+    <input type="text" id="IDnumber" placeholder="ID">
+    <!--Creats the button to submit the names-->
+    <button id="submit" onclick="validateuser()">Login</button>
+    
+
+
+</body>
+<!--ends the HTML document-->
+</html>
